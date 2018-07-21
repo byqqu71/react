@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import  { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class UserBar extends Component {
+export default class Description extends Component {
     static propTypes = {
         style: PropTypes.oneOfType(
             [
@@ -16,7 +16,7 @@ export default class UserBar extends Component {
         const { style } = this.props;
         return (
             <View style = { style }>
-                <Text>USER BAR</Text>
+                <Text>Description</Text>
             </View>
         );
     }
