@@ -1,19 +1,12 @@
-import React, {Component} from 'react';
-import {StyleSheet} from "react-native";
-import AppMain from "./src/AppMain";
+import React from 'react';
+import { Navigation } from 'react-native-navigation';
+import { registerScreens, registerScreenVisibilityListener } from './src/screens/Screens';
 
-export default class App extends Component {
-  render() {
-    return (
-        <AppMain style={ styles.mainView }/>
-    );
-  }
-}
+registerScreens();
+registerScreenVisibilityListener();
 
-const styles = StyleSheet.create({
-    mainView: {
-        flex: 1,
-        width: '100%',
-        height: '100%'
+Navigation.startSingleScreenApp({
+    screen: {
+        screen: 'app.AppMain',
     }
 });

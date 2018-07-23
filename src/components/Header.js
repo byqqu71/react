@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  { View, Text } from 'react-native';
+import  { TouchableHighlight, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class Header extends Component {
@@ -12,12 +12,17 @@ export default class Header extends Component {
             ]
         ).isRequired
     };
+    showDetails = () => {
+        this.props.navigator.push({
+            screen: 'app.Details',
+        });
+    };
     render() {
         const { style } = this.props;
         return (
-            <View style = { style }>
+            <TouchableHighlight style = { style } onPress = { this.showDetails }>
                 <Text>Header</Text>
-            </View>
+            </TouchableHighlight>
         );
     }
 }
